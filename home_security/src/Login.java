@@ -165,19 +165,25 @@ public class Login extends JFrame{
 
     private void checkLogin(){
 
-        String passwordText = String.valueOf(passwordField.getPassword());
         String usernameText = usernameField.getText();
+        String passwordText = String.valueOf(passwordField.getPassword());
 
-        if(!usernameField.getText().equals("") && passwordField.getPassword().length != 0){
+        if(usernameText.equals("user1") && passwordText.equals("password")){
             System.out.println("Username: " + usernameText);
             System.out.println("Password: " + passwordText);
 
             this.app.setVisible(true);
             this.setVisible(false);
         }
-        else{
+
+        else if((!usernameText.equals("") && !passwordText.equals("")) && (!usernameText.equals("user1") && !passwordText.equals("password"))){
+            JOptionPane.showMessageDialog(this, "Username or Password is incorrect", "Wrong details", JOptionPane.WARNING_MESSAGE);
+        }
+
+        else if(usernameText.equals("") && passwordText.equals("")){
             JOptionPane.showMessageDialog(this, "Fill in all required fields", "Missing Fields", JOptionPane.WARNING_MESSAGE);
         }
+
     }
 
     private void showPass() {
