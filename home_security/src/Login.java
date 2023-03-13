@@ -8,16 +8,16 @@ import java.awt.event.FocusListener;
 public class Login extends JFrame{
 
     // GLOBAL VARIABLES
-    private JPanel mainPanel;
-    private JTextField usernameField;
-    private JPasswordField passwordField;
-    private JButton loginButton;
-    private JButton registerButton;
-    private JButton quitButton;
-    private JRadioButton showPassButton;
+    private final JPanel mainPanel;
+    private final JTextField usernameField;
+    private final JPasswordField passwordField;
+    private final JButton loginButton;
+    private final JButton registerButton;
+    private final JButton quitButton;
+    private final JRadioButton showPassButton;
 
     // GLOBAL VARIABLE OF MAIN APP
-    private App app;
+    private final App app;
 
     public Login(App app){
         super("Atomic Security [LOGIN]");

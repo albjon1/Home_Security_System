@@ -8,16 +8,16 @@ import java.awt.event.FocusListener;
 public class Register extends JFrame{
 
     // GLOBAL VARIABLES
-    private JPanel mainPanel;
-    private JTextField emailField;
-    private JPasswordField passwordField;
-    private JButton registerButton;
-    private JButton quitButton;
-    private JRadioButton showPassButton;
-    private JButton backButton;
+    private final JPanel mainPanel;
+    private final JTextField emailField;
+    private final JPasswordField passwordField;
+    private final JButton registerButton;
+    private final JButton quitButton;
+    private final JRadioButton showPassButton;
+    private final JButton backButton;
 
     // GLOBAL VARIABLE OF LOGIN
-    private Login login;
+    private final Login login;
 
     public Register(Login login){
         super("Atomic Security [REGISTER]");

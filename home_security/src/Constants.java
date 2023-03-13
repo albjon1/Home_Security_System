@@ -3,6 +3,9 @@ import javax.swing.*;
 
 public class Constants {
 
+    // TO PREVENT INSTANCES OF THIS CLASS
+    private Constants(){}
+
     // CONSTANT VALUES
     
     // ICON
