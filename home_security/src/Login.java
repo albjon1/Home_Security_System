@@ -41,10 +41,10 @@ public class Login extends JFrame{
         title.setFont(new Font("consolas", Font.BOLD, 40));
         title.setBounds(240, 95, 350, 50);
 
-        JLabel uTitle = new JLabel("Username");
+        JLabel uTitle = new JLabel("Email");
         uTitle.setForeground(Constants.GREY);
         uTitle.setFont(new Font("consolas", Font.BOLD, 20));
-        uTitle.setBounds(360, 160, 100, 30);
+        uTitle.setBounds(375, 160, 100, 30);
         mainPanel.add(uTitle);
 
 
@@ -127,7 +127,8 @@ public class Login extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
-                new Register();
+                passLoginInstance();
+
             }
         });
         mainPanel.add(registerButton);
@@ -180,7 +181,7 @@ public class Login extends JFrame{
             System.out.println("Password: " + passwordText);
 
             this.app.setVisible(true);
-            this.setVisible(false);
+            this.dispose();
         }
 
         else if((!usernameText.equals("") && !passwordText.equals("")) && (!usernameText.equals("user1") && !passwordText.equals("password"))){
@@ -201,5 +202,11 @@ public class Login extends JFrame{
         if(!showPassButton.isSelected()){
             passwordField.setEchoChar('\u25CF');
         }
+    }
+
+    // To give Register class access to this class
+    // inside overridden method
+    private void passLoginInstance(){
+        new Register(this);
     }
 }

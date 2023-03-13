@@ -15,10 +15,11 @@ public class Register extends JFrame{
     private JButton quitButton;
     private JRadioButton showPassButton;
     private JButton backButton;
+    private Login login;
 
-
-    public Register(){
+    public Register(Login login){
         super("Atomic Security [REGISTER]");
+        this.login = login;
         this.setSize(Constants.LOGIN_WIDTH, Constants.LOGIN_HEIGHT);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setResizable(false);
@@ -41,7 +42,7 @@ public class Register extends JFrame{
         JLabel uTitle = new JLabel("Email");
         uTitle.setForeground(Constants.GREY);
         uTitle.setFont(new Font("consolas", Font.BOLD, 20));
-        uTitle.setBounds(360, 160, 100, 30);
+        uTitle.setBounds(375, 160, 100, 30);
         mainPanel.add(uTitle);
 
 
@@ -132,6 +133,14 @@ public class Register extends JFrame{
         backButton.setFocusable(false);
         backButton.setRolloverEnabled(false);
         backButton.setBorder(null);
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                // Instance of login passed
+                login.setVisible(true);
+            }
+        });
         mainPanel.add(backButton);
 
         showPassButton = new JRadioButton("Show");
@@ -158,7 +167,11 @@ public class Register extends JFrame{
 
     private void register(){
         String emailAddress = emailField.getText();
+        this.emailField.setText("");
+        this.passwordField.setText("");
         JOptionPane.showMessageDialog(this, "Successfully registered [ " + emailAddress + "]", "Registration Successful", JOptionPane.WARNING_MESSAGE);
+        this.dispose();
+        login.setVisible(true);
     }
 
 
