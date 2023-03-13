@@ -15,6 +15,8 @@ public class Register extends JFrame{
     private JButton quitButton;
     private JRadioButton showPassButton;
     private JButton backButton;
+
+    // GLOBAL VARIABLE OF LOGIN
     private Login login;
 
     public Register(Login login){
