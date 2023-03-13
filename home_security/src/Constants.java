@@ -12,6 +12,10 @@ public class Constants {
     public static final short LOGIN_WIDTH = 800;
     public static final short LOGIN_HEIGHT = 550;
 
+    // REGISTER DIMENSIONS
+    public static final short REGISTER_WIDTH = 800;
+    public static final short REGISTER_HEIGHT = 550;
+
     // APP DIMENSIONS
     public static final short APP_WIDTH = 1300;
     public static final short APP_HEIGHT = 750;

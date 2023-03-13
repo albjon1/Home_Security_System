@@ -20,7 +20,7 @@ public class Register extends JFrame{
     public Register(Login login){
         super("Atomic Security [REGISTER]");
         this.login = login;
-        this.setSize(Constants.LOGIN_WIDTH, Constants.LOGIN_HEIGHT);
+        this.setSize(Constants.REGISTER_WIDTH, Constants.REGISTER_HEIGHT);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setResizable(false);
         this.setIconImage(Constants.ICON);
