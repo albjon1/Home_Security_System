@@ -20,7 +20,7 @@ public class Constants {
     public static final short APP_WIDTH = 1300;
     public static final short APP_HEIGHT = 750;
 
-    // GUI COLOURS
+    // UI COLOURS
     public static final Color GREY12 = new Color(31, 31, 31);
     public static final Color GREY = new Color(128, 128, 128);
     public static final Color DARK_GREY = new Color(90, 90, 90);
