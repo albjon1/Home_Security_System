@@ -171,7 +171,7 @@ public class Register extends JFrame{
         String emailAddress = emailField.getText();
         this.emailField.setText("");
         this.passwordField.setText("");
-        JOptionPane.showMessageDialog(this, "Successfully registered [ " + emailAddress + "]", "Registration Successful", JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Successfully registered [ " + emailAddress + "]", "Registration Successful", JOptionPane.PLAIN_MESSAGE);
         this.dispose();
         login.setVisible(true);
     }
