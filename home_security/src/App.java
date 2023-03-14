@@ -14,6 +14,8 @@ public class App extends JFrame{
         this.setSize(Constants.APP_WIDTH, Constants.APP_HEIGHT);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setIconImage(Constants.ICON);
+        // Ensures frame is centred regardless of monitor size
+        this.setLocationRelativeTo(null);
         this.setVisible(false);
 
         // Login Instance

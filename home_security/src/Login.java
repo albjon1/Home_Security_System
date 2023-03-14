@@ -26,7 +26,10 @@ public class Login extends JFrame{
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setResizable(false);
         this.setIconImage(Constants.ICON);
-        
+        // Ensures frame is centred regardless of monitor size
+        this.setLocationRelativeTo(null);
+
+
         // MAIN PANEL INIT / ADDING COMPONENTS
         mainPanel = new JPanel();
         mainPanel.setLayout(null);
