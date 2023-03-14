@@ -171,11 +171,19 @@ public class Register extends JFrame{
 
     private void register(){
         String emailAddress = emailField.getText();
-        this.emailField.setText("");
-        this.passwordField.setText("");
-        JOptionPane.showMessageDialog(this, "Successfully registered [ " + emailAddress + "]", "Registration Successful", JOptionPane.PLAIN_MESSAGE);
-        this.dispose();
-        login.setVisible(true);
+        String password = String.valueOf(passwordField.getPassword());
+
+        if(emailAddress.equals("") || password.equals("")){
+            JOptionPane.showMessageDialog(this, "Fill in all required fields", "Missing Fields", JOptionPane.WARNING_MESSAGE);
+        }
+
+        else{
+            this.emailField.setText("");
+            this.passwordField.setText("");
+            JOptionPane.showMessageDialog(this, "Successfully registered [ " + emailAddress + "]", "Registration Successful", JOptionPane.PLAIN_MESSAGE);
+            this.dispose();
+            login.setVisible(true);
+        }
     }
 
 

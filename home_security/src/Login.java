@@ -9,7 +9,7 @@ public class Login extends JFrame{
 
     // GLOBAL VARIABLES
     private final JPanel mainPanel;
-    private final JTextField usernameField;
+    private final JTextField emailField;
     private final JPasswordField passwordField;
     private final JButton loginButton;
     private final JButton registerButton;
@@ -51,15 +51,15 @@ public class Login extends JFrame{
         mainPanel.add(uTitle);
 
 
-        usernameField = new JTextField();
-        usernameField.setBounds(304, 190, 200, 25);
-        usernameField.setFont(new Font("arial", Font.BOLD, 18));
-        usernameField.setSelectionColor(Constants.WHITE);
-        usernameField.setBorder(null);
-        usernameField.setCaretColor(Constants.GREY12);
-        usernameField.setBackground(Constants.GREY);
-        usernameField.putClientProperty("caretWidth", 2);
-        usernameField.addFocusListener(new FocusListener() {
+        emailField = new JTextField();
+        emailField.setBounds(304, 190, 200, 25);
+        emailField.setFont(new Font("arial", Font.BOLD, 18));
+        emailField.setSelectionColor(Constants.WHITE);
+        emailField.setBorder(null);
+        emailField.setCaretColor(Constants.GREY12);
+        emailField.setBackground(Constants.GREY);
+        emailField.putClientProperty("caretWidth", 2);
+        emailField.addFocusListener(new FocusListener() {
 
             @Override
             public void focusGained(FocusEvent e) {
@@ -71,7 +71,7 @@ public class Login extends JFrame{
                 uTitle.setForeground(Constants.GREY);
             }
         });
-        mainPanel.add(usernameField);
+        mainPanel.add(emailField);
 
         JLabel pTitle = new JLabel("Password");
         pTitle.setForeground(Constants.GREY);
@@ -176,22 +176,22 @@ public class Login extends JFrame{
 
     private void checkLogin(){
 
-        String usernameText = usernameField.getText();
-        String passwordText = String.valueOf(passwordField.getPassword());
+        String emailAddress = emailField.getText();
+        String password = String.valueOf(passwordField.getPassword());
 
-        if(usernameText.equals("user1") && passwordText.equals("password")){
-            System.out.println("Username: " + usernameText);
-            System.out.println("Password: " + passwordText);
+        if(emailAddress.equals("user1") && password.equals("password")){
+            System.out.println("Username: " + emailAddress);
+            System.out.println("Password: " + password);
 
             this.app.setVisible(true);
             this.dispose();
         }
 
-        else if((!usernameText.equals("") && !passwordText.equals("")) && (!usernameText.equals("user1") && !passwordText.equals("password"))){
+        else if((!emailAddress.equals("") && !password.equals("")) && (!emailAddress.equals("user1") && !password.equals("password"))){
             JOptionPane.showMessageDialog(this, "Username or Password is incorrect", "Wrong details", JOptionPane.WARNING_MESSAGE);
         }
 
-        else if(usernameText.equals("") || passwordText.equals("")){
+        else if(emailAddress.equals("") || password.equals("")){
             JOptionPane.showMessageDialog(this, "Fill in all required fields", "Missing Fields", JOptionPane.WARNING_MESSAGE);
         }
 
